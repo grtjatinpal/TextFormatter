@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Varela+Round&display=swap');
+
+body {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+    margin: 2.5px;
+    z-index: 1;
+    transition: all 0.9s;
+    appearance: none;
+    background-color: rgb(0 210 106);
+    border-radius: 50%;
+}   
+
+input[type="checkbox"]::after{
+    content: "❎";
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+label.checkedBox{
+    margin: 5px 5px 5px 5px;
+    position: relative;
+    height: 30px;
+    min-width: 75px;
+    max-width: 200px;
+    border-radius: 30px;
+    z-index: 2;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+span.slider{
+    background-color: rgba(0, 0, 0, 0.171);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.6s;
+}
+
+input:checked + span.slider {
+    background-color: #2196F3;
+}
+
+input:checked{
+    /* transform: rotate(360deg); */
+    transform: translateX(45px) rotate(360deg);
+}
+
+input:checked::after{
+    content: "✅";
+}
